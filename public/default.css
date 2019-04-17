@@ -1,0 +1,15 @@
+
+html {
+    background: linear-gradient(#e66465, #9198e5) no-repeat;
+    height: 100vh;
+    color: #DDD;
+}
+
+title {
+    font-size: 2em;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
