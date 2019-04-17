@@ -3,7 +3,6 @@
 <head>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/3.4.3/typescript.min.js"></script>
     <!-- these aren't loading, so I've copied the scripts internally below
         <link rel="stylesheet" type="text/css" href="simon.css" />
         <script type='text/javascript' src='simon.js' async></script>
@@ -223,14 +222,14 @@
         }
     </style>
     <script>
-        let comboMemory: BUTTONCOLOR[] = []
-        let userIndex: number = 0
-        let playbackID: number
-        let userTurn: boolean = false
-        let strictMode: boolean = false
+        let comboMemory = []
+        let userIndex= 0
+        let playbackID
+        let userTurn= false
+        let strictMode= false
         //let onButton:boolean = true
-        let turnCount: number = 0
-        let turnsToWin: number = 20
+        let turnCount = 0
+        let turnsToWin = 20
         // possibly start turn at 1;
         let blueSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")
         let greenSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
