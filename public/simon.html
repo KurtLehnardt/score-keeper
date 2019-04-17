@@ -255,7 +255,7 @@
         }
 
         function newColor() {
-            let random: number = Math.floor(Math.random() * (4 - 0) + 0)
+            let random = Math.floor(Math.random() * (4 - 0) + 0)
             comboMemory.push(random)
             console.log(comboMemory, 'new Color added')
         }
@@ -284,7 +284,7 @@
                 turnCount++
             }
         }
-        function playColor(color: BUTTONCOLOR) {
+        function playColor(color) {
             //Consolidate verbose switch statements into this function
             //function light(){$("#" + color)..animate({opacity: 1}, 200).animate({opacity: 0.8}, 100)}
             //if (onButton){
@@ -364,7 +364,7 @@
 
 
 
-        function pressColor(color: BUTTONCOLOR) {
+        function pressColor(color) {
             //   if (onButton){
             switch (color) {
                 case BUTTONCOLOR.BLUE:
