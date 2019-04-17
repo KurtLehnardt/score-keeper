@@ -2,223 +2,222 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="./simon.css" />
-    
-    <!--  this isn't loading for some reason ... <script src="./simon.js"></script> -->
+    <script type='text/javascript' src='./simon.js' async></script>
     <meta charset='UTF-8'>
     <meta name="authors" content="Kurt Lehnardt, Russell Murray">
-    <style>
-        body {
-            background: url("http://images.naldzgraphics.net/2014/08/3-seamless-dark-carpet.jpg");
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
+    <!--  <style>
+         body {
+             background: url("http://images.naldzgraphics.net/2014/08/3-seamless-dark-carpet.jpg");
+             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         }
 
-        #app {
-            position: relative;
-            width: 640px;
-            margin: 0 auto;
-            font-family: helvetica;
-            transform: rotate(-5deg);
-        }
+         #app {
+             position: relative;
+             width: 640px;
+             margin: 0 auto;
+             font-family: helvetica;
+             transform: rotate(-5deg);
+         }
 
-        #gamepad {
-            border-style: solid;
-            border-width: 30px;
-            border-radius: 50%;
-            margin: 0 auto;
-            position: absolute;
-            top: 50px;
-            width: 640px;
-            height: 640px;
-            background: #000;
-            box-shadow: 30px 30px 10px rgba(5,5,5,0.7);
-        }
+         #gamepad {
+             border-style: solid;
+             border-width: 30px;
+             border-radius: 50%;
+             margin: 0 auto;
+             position: absolute;
+             top: 50px;
+             width: 640px;
+             height: 640px;
+             background: #000;
+             box-shadow: 30px 30px 10px rgba(5,5,5,0.7);
+         }
 
-        .pad {
-            width: 300px;
-            height: 300px;
-            float: left;
-            margin: 10px;
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-            filter: alpha(opacity=60);
-        }
+         .pad {
+             width: 300px;
+             height: 300px;
+             float: left;
+             margin: 10px;
+             -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+             filter: alpha(opacity=60);
+         }
 
-        .blue {
-            opacity: .4;
-            border-top-left-radius: 300px;
-            background: radial-gradient(circle farthest-corner at bottom right, white, #004e92, #000428 );
-        }
+         .blue {
+             opacity: .4;
+             border-top-left-radius: 300px;
+             background: radial-gradient(circle farthest-corner at bottom right, white, #004e92, #000428 );
+         }
 
-        .green {
-            opacity: .4;
-            float: left;
-            border-top-right-radius: 300px;
-            background: radial-gradient(circle farthest-corner at bottom left, white, #52c234, #061711);
-            clear: right;
-        }
+         .green {
+             opacity: .4;
+             float: left;
+             border-top-right-radius: 300px;
+             background: radial-gradient(circle farthest-corner at bottom left, white, #52c234, #061711);
+             clear: right;
+         }
 
-        .red {
-            opacity: .4;
-            float: left;
-            border-bottom-left-radius: 300px;
-            background: radial-gradient(circle farthest-corner at top right, white, #ed213a, #63231a);
-            clear: left;
-        }
+         .red {
+             opacity: .4;
+             float: left;
+             border-bottom-left-radius: 300px;
+             background: radial-gradient(circle farthest-corner at top right, white, #ed213a, #63231a);
+             clear: left;
+         }
 
-        .yellow {
-            opacity: .4;
-            float: left;
-            border-bottom-right-radius: 300px;
-            background: radial-gradient(circle farthest-corner at top left, white, #fffd22, #fffc00);
-        }
+         .yellow {
+             opacity: .4;
+             float: left;
+             border-bottom-right-radius: 300px;
+             background: radial-gradient(circle farthest-corner at top left, white, #fffd22, #fffc00);
+         }
 
-        .center {
-            position: absolute;
-            top: 175px;
-            left: 175px;
-            width: 250px;
-            height: 250px;
-            border-style: solid;
-            border-width: 20px;
-            border-radius: 50%;
-            border-color: #000;
-            background: radial-gradient(circle farthest-corner at top right, silver, #444);
-        }
+         .center {
+             position: absolute;
+             top: 175px;
+             left: 175px;
+             width: 250px;
+             height: 250px;
+             border-style: solid;
+             border-width: 20px;
+             border-radius: 50%;
+             border-color: #000;
+             background: radial-gradient(circle farthest-corner at top right, silver, #444);
+         }
 
-        #title {
-            height: 120px;
-            width: 250px;
-            color: #ccc;
-            position: absolute;
-            top: -1px;
-            text-shadow: 1px 1px 1px white;
-            font-size: 3.5em;
-            border-top: 1px solid #555;
-            background: #000;
-            border-top-right-radius: 125px;
-            border-top-left-radius: 125px;
-        }
+         #title {
+             height: 120px;
+             width: 250px;
+             color: #ccc;
+             position: absolute;
+             top: -1px;
+             text-shadow: 1px 1px 1px white;
+             font-size: 3.5em;
+             border-top: 1px solid #555;
+             background: #000;
+             border-top-right-radius: 125px;
+             border-top-left-radius: 125px;
+         }
 
-        #simonText {
-            position: absolute;
-            left: 32px;
-            top: -10px;
-            color: silver;
-        }
+         #simonText {
+             position: absolute;
+             left: 32px;
+             top: -10px;
+             color: silver;
+         }
 
-        .buttons {
-            user-select: none;
-            moz-user-select: none;
-            webkit-user-select: none;
-        }
+         .buttons {
+             user-select: none;
+             moz-user-select: none;
+             webkit-user-select: none;
+         }
 
-        .buttonLabels {
-            font-size: .8em;
-            position: relative;
-            top: -19px;
-            color: black;
-            text-shadow: 1px 1px grey;
-        }
+         .buttonLabels {
+             font-size: .8em;
+             position: relative;
+             top: -19px;
+             color: black;
+             text-shadow: 1px 1px grey;
+         }
 
-        #hard {
-            position: relative;
-            left: 5px;
-        }
+         #hard {
+             position: relative;
+             left: 5px;
+         }
 
-        #start {
-            background: radial-gradient(#550, #220);
-            position: absolute;
-            top: 152px;
-            left: 25px;
-            width: 35px;
-            height: 35px;
-            border-style: solid;
-            border-width: 2px;
-            border-color: #000;
-            border-radius: 50%;
-        }
+         #start {
+             background: radial-gradient(#550, #220);
+             position: absolute;
+             top: 152px;
+             left: 25px;
+             width: 35px;
+             height: 35px;
+             border-style: solid;
+             border-width: 2px;
+             border-color: #000;
+             border-radius: 50%;
+         }
 
-            #start:active {
-                background: radial-gradient(white, yellow);
-            }
+             #start:active {
+                 background: radial-gradient(white, yellow);
+             }
 
-        #strictMode {
-            position: absolute;
-            top: 150px;
-            left: 191px;
-            background: radial-gradient(blue, black);
-            border: solid 2px black;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-        }
+         #strictMode {
+             position: absolute;
+             top: 150px;
+             left: 191px;
+             background: radial-gradient(blue, black);
+             border: solid 2px black;
+             border-radius: 50%;
+             width: 35px;
+             height: 35px;
+         }
 
-        #turnCount {
-            position: absolute;
-            top: 150px;
-            left: 75px;
-            width: 100px;
-            height: 37px;
-            border-style: solid;
-            border-color: rgba(0,0,0,0.5);
-            background-color: rgba(150,0,0,0.3);
-            font-size: 1.5em;
-            text-align: center;
-            color: rgba(250,0,0,0.5);
-            text-shadow: 1px 1px 1px #000;
-        }
+         #turnCount {
+             position: absolute;
+             top: 150px;
+             left: 75px;
+             width: 100px;
+             height: 37px;
+             border-style: solid;
+             border-color: rgba(0,0,0,0.5);
+             background-color: rgba(150,0,0,0.3);
+             font-size: 1.5em;
+             text-align: center;
+             color: rgba(250,0,0,0.5);
+             text-shadow: 1px 1px 1px #000;
+         }
 
-        #difficulty {
-            position: relative;
-            top: 195px;
-            left: 94px;
-            z-index: 1;
-        }
+         #difficulty {
+             position: relative;
+             top: 195px;
+             left: 94px;
+             z-index: 1;
+         }
 
-        .sliderContainer {
-            position: relative;
-            top: 0px;
-            left: -5px;
-        }
+         .sliderContainer {
+             position: relative;
+             top: 0px;
+             left: -5px;
+         }
 
-        .slider {
-            border-radius: 10%;
-            -webkit-appearance: none; /* Override default CSS styles */
-            appearance: none;
-            width: 30%; /* Full-width */
-            height: 25px; /* Specified height */
-            background: #0192ef; /* Grey background */
-            outline: none; /* Remove outline */
-        }
+         .slider {
+             border-radius: 10%;
+             -webkit-appearance: none; /* Override default CSS styles */
+             appearance: none;
+             width: 30%; /* Full-width */
+             height: 25px; /* Specified height */
+             background: #0192ef; /* Grey background */
+             outline: none; /* Remove outline */
+         }
 
-            .slider::-webkit-slider-thumb {
-                -webkit-appearance: none; /* Override default look */
-                appearance: none;
-                width: 5px; /* Set a specific slider handle width */
-                height: 25px; /* Slider handle height */
-                background: #004899;
-                cursor: pointer; /* Cursor on hover */
-            }
+             .slider::-webkit-slider-thumb {
+                 -webkit-appearance: none; /* Override default look */
+                 appearance: none;
+                 width: 5px; /* Set a specific slider handle width */
+                 height: 25px; /* Slider handle height */
+                 background: #004899;
+                 cursor: pointer; /* Cursor on hover */
+             }
 
-            .slider::-moz-range-thumb {
-                width: 5px; /* Set a specific slider handle width */
-                height: 25px; /* Slider handle height */
-                background: #004899; /* Green background */
-                cursor: pointer; /* Cursor on hover */
-            }
+             .slider::-moz-range-thumb {
+                 width: 5px; /* Set a specific slider handle width */
+                 height: 25px; /* Slider handle height */
+                 background: #004899; /* Green background */
+                 cursor: pointer; /* Cursor on hover */
+             }
 
-        #submit {
-            padding-bottom: 5px;
-        }
+         #submit {
+             padding-bottom: 5px;
+         }
 
-        #logout {
-            position: relative;
-            text-decoration: none;
-            border: 1px solid black;
-            background: #9198e5;
-            padding: 1px;
-        }
-    </style>
-    
+         #logout {
+             position: relative;
+             text-decoration: none;
+             border: 1px solid black;
+             background: #9198e5;
+             padding: 1px;
+         }
+     </style> -->
+
 </head>
 <body>
     <span id=output></span>
