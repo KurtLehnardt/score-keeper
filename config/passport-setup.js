@@ -19,7 +19,7 @@ passport.use(new googleAuthStrategy({
 passport.use(new gitHubStrategy({
     clientID: keys.github.clientID,
     clientSecret: keys.github.clientSecret,
-    callbackURL: "http://localhost:3000/auth/github/callback"
+    callbackURL: "https://evening-fjord-57340.herokuapp.com/auth/github/callback"
 },
 
     function (accesstoken, refreshtoken, profile, cb) {
