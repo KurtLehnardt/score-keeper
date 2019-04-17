@@ -2,8 +2,8 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="./simon.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./simon.js"></script>
+    
+    <!--  this isn't loading for some reason ... <script src="./simon.js"></script> -->
     <meta charset='UTF-8'>
     <meta name="authors" content="Kurt Lehnardt, Russell Murray">
     <style>
@@ -218,6 +218,41 @@
             padding: 1px;
         }
     </style>
+    
+</head>
+<body>
+    <span id=output></span>
+
+    <div id='app'>
+        <div id='gamepad'>
+            <div id='blue' class="pad blue" onclick='pressColor(0)'></div>
+            <div id='green' class="pad green" onclick='pressColor(1)'></div>
+            <div id='red' class="pad red" onclick='pressColor(2)'></div>
+            <div id='yellow' class="pad yellow" onclick='pressColor(3)'></div>
+            <div class='center'>
+                <div id='title'>
+                    <p id='simonText'>SIMON</p>
+                </div>
+
+                <div id="turnCount"></div>
+                <div class='clear'></div>
+
+                <a id='strictMode' class='buttons' onclick='toggleStrict()'><span class='buttonLabels' id='hard'>HARD</span></a>
+
+                <a id='start' onclick='gameStart();toggleOnOff()' class='buttons'><span class='buttonLabels'>START</span></a>
+                <span class='buttonLabels' id='difficulty'>DIFFICULTY</span>
+                <div class="sliderContainer">
+                    <input type="range" min="1" max="3" value="2" class="slider" id="difficulty" oninput='setDifficulty(value)'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button id="submit" onclick='submit()'>Submit score</button><br />
+        <a id="logout" href='/auth/logout'>Logout</a>
+    </div>
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         let comboMemory: BUTTONCOLOR[] = []
         let userIndex: number = 0
@@ -437,37 +472,4 @@
             YELLOW
         }
     </script>
-</head>
-<body>
-    <span id=output></span>
-
-    <div id='app'>
-        <div id='gamepad'>
-            <div id='blue' class="pad blue" onclick='pressColor(0)'></div>
-            <div id='green' class="pad green" onclick='pressColor(1)'></div>
-            <div id='red' class="pad red" onclick='pressColor(2)'></div>
-            <div id='yellow' class="pad yellow" onclick='pressColor(3)'></div>
-            <div class='center'>
-                <div id='title'>
-                    <p id='simonText'>SIMON</p>
-                </div>
-
-                <div id="turnCount"></div>
-                <div class='clear'></div>
-
-                <a id='strictMode' class='buttons' onclick='toggleStrict()'><span class='buttonLabels' id='hard'>HARD</span></a>
-
-                <a id='start' onclick='gameStart();toggleOnOff()' class='buttons'><span class='buttonLabels'>START</span></a>
-                <span class='buttonLabels' id='difficulty'>DIFFICULTY</span>
-                <div class="sliderContainer">
-                    <input type="range" min="1" max="3" value="2" class="slider" id="difficulty" oninput='setDifficulty(value)'>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <button id="submit" onclick='submit()'>Submit score</button><br />
-        <a id="logout" href='/auth/logout'>Logout</a>
-    </div>
-</body>
 </html>

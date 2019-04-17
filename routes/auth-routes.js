@@ -29,6 +29,10 @@ router.get('/buttonClicker', (req, res) => {
     res.sendFile('buttonClicker.html', { root: './public' });
 })
 
+router.get('/drumMachine', (req, res) => {
+    res.sendFile('drumMachine.html', { root: './public' });
+})
+
 // google auth callback route
 router.get('/google/redirect', (req, res) => {
     //res.send('this is the redir uri')
