@@ -35,6 +35,7 @@
 </head>
 <body>
     <h1>How fast can you click?</h1>
+    <h2>Your high score is <span id='highScoreSpan'></span></h2>
     <div id="buttonHolder">
         <div id="clicker" onclick="increment()"></div>
         <p>
@@ -48,20 +49,27 @@
     </div>
 </body>
 <script>
-    let score = 0;
+
+//these are globals, maybe put them inside a function?
+    let scoreList = {
+      table: []
+    }
+    let count = 0;
     let time = 0;
     function increment() {
-        score += 1;
-        document.getElementById('counter').innerHTML = score;
+        count += 1;
+        document.getElementById('counter').innerHTML = count;
     }
     function submit() {
         let highScore = document.getElementById('pressPerSecond').innerHTML;
         alert(highScore);
+        scoreList.table.push(highScore)
+        document.getElementById('highScoreSpan').innerHTML = highScore
     }
     function startTimer(event) {
         let time = document.getElementById("time");
         let seconds = (event.timeStamp / 1000).toFixed(2);
-        let pressPerSecond = (score / seconds).toFixed(2)
+        let pressPerSecond = (count / seconds).toFixed(2)
         document.getElementById('pressPerSecond').innerHTML = pressPerSecond;
         return pressPerSecond;
     }
