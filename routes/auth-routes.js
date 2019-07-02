@@ -33,6 +33,10 @@ router.get('/drumMachine', (req, res) => {
     res.sendFile('drumMachine.html', { root: './public' });
 })
 
+router.get('/happyPath', (req, res) => {
+    res.sendFile('happyPath.html', { root: './public' });
+})
+
 // google auth callback route
 router.get('/google/redirect', (req, res) => {
     //res.send('this is the redir uri')
@@ -56,4 +60,3 @@ router.get('*', function (req, res) {
 });
 
 module.exports = router;
-

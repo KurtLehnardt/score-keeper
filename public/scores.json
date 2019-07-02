@@ -1,4 +1,4 @@
-{
-  "name": "user1",
-  "score": "50",
+module.exports = {
+  "user": "Kurt",
+  "score": "50"
 }
