@@ -1,0 +1,28 @@
+<style>
+    body {
+        background: linear-gradient(#e5a491, #9198e5) no-repeat;
+        height: 100vh;
+        color: #DDD;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #buttonHolder {
+        margin: 0 auto;
+    }
+
+    #clicker {
+        margin: 0 auto;
+        width: 350px;
+        height: 200px;
+        background-image: url('https://s3-us-west-2.amazonaws.com/trailerments/score-keeper/buttonUp.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+        #clicker:active {
+            background-image: url('https://s3-us-west-2.amazonaws.com/trailerments/score-keeper/buttonDown.png');
+            background-size: cover;
+            background-position: center;
+        }
+</style>

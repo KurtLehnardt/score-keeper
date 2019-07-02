@@ -1,0 +1,116 @@
+body {
+    position: relative;
+    padding-top: 50px;
+    text-align: center;
+    background: #F86;
+    width: 50vw;
+    margin: 0 auto;
+    font-family: 'Arial, Helvetica', sans-serif;
+    color: #77ffbb;
+    text-shadow: 2px 2px orange;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+#drum-machine {
+    min-width: 500px;
+}
+
+#display {
+    padding-top: 20px;
+    height: 500px;
+}
+
+.drum-pad {
+    vertical-align: text-top;
+    width: 50vw;
+    height: 8vh;
+    border-radius: 10%;
+    background: white no-repeat;
+    padding: 7%;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto;
+    font-size: 3em;
+    opacity: 0.85;
+    border: 5px solid #fff;
+}
+
+    .drum-pad:hover {
+        opacity: 1;
+        border: 5px solid #77ffbb;
+        transform: scale(1.1)
+    }
+
+.pressed {
+    opacity: 1;
+    border: 5px solid #77ffbb;
+}
+
+#Q {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/closedHat.png')
+}
+
+#W {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/openHat.png')
+}
+
+#E {
+    background-image: url('https://image.flaticon.com/icons/png/128/26/26785.png')
+}
+
+#A {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/snare-drum.png')
+}
+
+#S {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/tuba1.png');
+}
+
+
+#D {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/trumpet1.png')
+}
+
+#Z {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/bass-drum.png');
+}
+
+#X {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/keysUp.png')
+}
+
+#C {
+    background-image: url('https://s3.us-east-2.amazonaws.com/fccprojects2018/drums/images/keysDown.png')
+}
+
+#buttonContainer {
+    padding: 4%;
+}
+
+.FX {
+    position: relative;
+    font-size: 2em;
+    border-radius: 5%;
+    opacity: 0.8;
+}
+
+    .FX:hover {
+        opacity: 1;
+        border: 2px solid #77ffbb;
+    }
+
+#soundInfo {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 4em;
+}
+
+#removeFX {
+    border: 5px solid black;
+}
+
+.swal-modal {
+    text-shadow: none;
+}
