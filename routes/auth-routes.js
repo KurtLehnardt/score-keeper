@@ -58,6 +58,12 @@ router.get('/buttonClicker.css', (req, res) => {
 router.get('/drumMachine', (req, res) => {
     res.sendFile('drumMachine.html', { root: './public' })
 })
+router.get('/drumMachine.js', (req, res) => {
+  res.sendFile('drumMachine.js', { root: './public' })
+})
+router.get('/drumMachine.css', (req, res) => {
+  res.sendFile('drumMachine.css', { root: './public' })
+})
 
 // chained routes to try it out
 router.get('/happyPath', (req, res) => {
@@ -108,11 +114,10 @@ router.post('/', (req, res) => {
   res.send('POST request to home page')
 })
 
-
 // handle bad URI
-// router.get('*', (req, res, next) => {
-//     res.render('404')
-//     next()
-// })
+router.get('*', (req, res, next) => {
+    res.status(404).render('404')
+    next()
+})
 
 module.exports = router
