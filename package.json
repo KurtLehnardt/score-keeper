@@ -13,7 +13,7 @@
     "browserify-shim": "^3.8.14",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "mongoose": "^5.7.5",
+    "mongoose": "^6.13.6",
     "npm": "^6.9.2",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
