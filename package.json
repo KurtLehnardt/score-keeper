@@ -12,7 +12,7 @@
   "dependencies": {
     "browserify-shim": "^3.8.14",
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.22.1",
     "mongoose": "^5.7.5",
     "npm": "^6.9.2",
     "passport": "^0.4.0",
